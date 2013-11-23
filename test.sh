@@ -1,7 +1,7 @@
 #!/bin/bash
-INPUT=`echo -n $1 | sed -e s/\\\\.[a-z]*/.txt/`
-OUTPUT=`echo -n $1 | sed -e s/\\\\.[a-z]*/.out/`
-TMP=`echo -n $1 | sed -e s/\\\\.[a-z]*/.tmp/`
+INPUT=`echo -n tests/$1 | sed -e s/\\\\.[a-z]*/.txt/`
+OUTPUT=`echo -n tests/$1 | sed -e s/\\\\.[a-z]*/.out/`
+TMP=`echo -n tests/$1 | sed -e s/\\\\.[a-z]*/.tmp/`
 ./$1 < $INPUT > $TMP
 DIFF=`diff $OUTPUT $TMP`
 
